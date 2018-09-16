@@ -14,9 +14,12 @@ import { HASH_TAGS } from '../constants/index';
 export class SearchFormComponent implements OnInit {
 
   formTitle: string;
-  apiType: string = HASH_TAGS;
+  apiType = HASH_TAGS;
   keyword = '';
-  tweets: Tweet[];
+  tweets: Tweet[] = [];
+  tableTitles = [
+    'Tweet', 'Likes', 'Replies', 'Retweets', 'Hashtags', 'Date'
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +31,6 @@ export class SearchFormComponent implements OnInit {
         ({ formTitle, apiType }) => {
           this.formTitle = formTitle;
           this.apiType = apiType;
-          this.fetchTweets();
         }
       );
   }
@@ -47,5 +49,9 @@ export class SearchFormComponent implements OnInit {
         console.log('res', res);
         this.tweets = res;
       });
+  }
+
+  onKey(event: any): void {
+    this.keyword = event.target.value;
   }
 }
