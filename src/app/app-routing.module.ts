@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {
+  HASH_TAGS,
+  USERS,
   HASH_TAG_SEARCH,
   USER_SEARCH,
   HASH_TAG_SEARCH_URL,
@@ -18,12 +20,14 @@ const routes: Routes = [
     path: HASH_TAG_SEARCH_URL,
     component: SearchFormComponent,
     data: {
+      apiType: HASH_TAGS,
       formTitle: HASH_TAG_SEARCH
     }
   }, {
     path: USER_SEARCH_URL,
     component: SearchFormComponent,
     data: {
+      apiType: USERS,
       formTitle: USER_SEARCH
     }
   }

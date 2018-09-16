@@ -1,3 +1,7 @@
+// Api types
+export const HASH_TAGS = 'hashtags';
+export const USERS = 'users';
+
 // Titles
 export const ANGULAR_TWITTER = 'ANGULAR_TWITTER';
 export const HASH_TAG_SEARCH = 'Hashtag search';
