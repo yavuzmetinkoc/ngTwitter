@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './searchForm/searchForm.component';
-import { NavigatorComponent } from './navigator/navigator.component'
+import { NavigatorComponent } from './navigator/navigator.component';
 
 @NgModule({
   declarations: [
