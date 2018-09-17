@@ -7,18 +7,26 @@ import { AppComponent } from './app.component';
 import { SearchFormComponent } from './searchForm/searchForm.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 
+import { TweetService } from './tweet.service';
+import { SearchFormInterface } from './interfaces/searchForm.interface';
+import { TableComponent } from './table/table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     NavigatorComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TweetService,
+    { provide: SearchFormInterface, useExisting: TweetService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

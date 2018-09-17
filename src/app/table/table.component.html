@@ -1,0 +1,17 @@
+<table *ngIf="tweets.length !== 0">
+  <thead>
+    <tr>
+      <th *ngFor="let title of tableTitles">{{ title }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tweet of tweets">
+      <td>{{ tweet.text }}</td>
+      <td>{{ tweet.likes }}</td>
+      <td>{{ tweet.replies }}</td>
+      <td>{{ tweet.retweets }}</td>
+      <td>{{ tweet.hashtags }}</td>
+      <td>{{ tweet.date }}</td>
+    </tr>
+  </tbody>
+</table>

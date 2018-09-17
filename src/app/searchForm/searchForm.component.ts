@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
-import { TweetService } from '../tweet.service';
-import { Tweet } from '../interfaces/tweet';
+import { SearchFormInterface } from '../interfaces/searchForm.interface';
+import { Tweet } from '../interfaces/tweet.interface';
 import { HASH_TAGS } from '../constants/index';
 
 @Component({
@@ -16,14 +17,11 @@ export class SearchFormComponent implements OnInit {
   formTitle: string;
   apiType = HASH_TAGS;
   keyword = '';
-  tweets: Tweet[] = [];
-  tableTitles = [
-    'Tweet', 'Likes', 'Replies', 'Retweets', 'Hashtags', 'Date'
-  ];
+  tweets$: Observable<Tweet[]> = this.tweetService.tweets$;
 
   constructor(
     private route: ActivatedRoute,
-    private tweetService: TweetService
+    private tweetService: SearchFormInterface
   ) {}
 
   ngOnInit() {
@@ -44,11 +42,7 @@ export class SearchFormComponent implements OnInit {
     this.tweetService.fetchTweets({
       apiType,
       keyword
-    })
-      .subscribe((res: Tweet[]) => {
-        console.log('res', res);
-        this.tweets = res;
-      });
+    });
   }
 
   onKey(event: any): void {
