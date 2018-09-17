@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Tweet } from './_tweet.interface';
+import { Tweet } from '../types/tweet.type';
 
 export abstract class TweetInterface {
   abstract tweetsPerPage: number;

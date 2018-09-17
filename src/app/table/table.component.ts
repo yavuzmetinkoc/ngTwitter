@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Tweet } from '../interfaces/_tweet.interface';
+import { Tweet } from '../types/tweet.type';
 import { TweetInterface } from '../interfaces/tweet.interface';
 import {} from '../interfaces/tweet.interface';
 
