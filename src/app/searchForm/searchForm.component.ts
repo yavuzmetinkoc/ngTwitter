@@ -35,10 +35,6 @@ export class SearchFormComponent implements OnInit {
 
   fetchTweets(): void {
     const { apiType, keyword } = this;
-    if (keyword === '') {
-      this.tweets = [];
-      return;
-    }
     this.tweetService.fetchTweets({
       apiType,
       keyword
