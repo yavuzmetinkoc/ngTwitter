@@ -17,7 +17,6 @@ export class SearchFormComponent implements OnInit {
   formTitle: string;
   apiType = HASH_TAGS;
   keyword = '';
-  tweets$: Observable<Tweet[]> = this.tweetService.tweets$;
 
   constructor(
     private route: ActivatedRoute,

@@ -2,16 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 
-import { Tweet } from './interfaces/tweet.interface';
-import { SearchFormInterface } from './interfaces/searchForm.interface';
+import { Tweet } from '../interfaces/tweet.interface';
+import { SearchFormInterface } from '../interfaces/searchForm.interface';
+import { PaginatorInterface } from '../interfaces/paginator.interface';
+import { TableInterface } from '../interfaces/table.interface';
 
 const proto = 'https://am-twitter-scrape.herokuapp.com';
 
 @Injectable()
-export class TweetService implements SearchFormInterface {
+export class TweetService implements SearchFormInterface, PaginatorInterface, TableInterface {
 
   private tweetStore$: BehaviorSubject<Tweet[]> = new BehaviorSubject([]);
+  private tweetAmountStore$: BehaviorSubject<number> = new BehaviorSubject(0);
   tweets$: Observable<Tweet[]> = this.tweetStore$;
+  tweetAmount$: Observable<number> = this.tweetAmountStore$;
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +30,10 @@ export class TweetService implements SearchFormInterface {
     console.log('***** fetch tweets from app.service.ts *****', apiType, keyword);
     this.http.get<Tweet[]>(`${proto}/${apiType}/${keyword}?pages_limit=3&wait=0`)
       .subscribe(
-        res => { this.tweetStore$.next(res); },
+        res => {
+          this.tweetStore$.next(res);
+          this.tweetAmountStore$.next(res.length);
+        },
         error => {
           console.log('fetchTweets error', error);
           this.tweetStore$.next([]);

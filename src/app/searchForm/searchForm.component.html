@@ -1,4 +1,5 @@
 <h3>{{ formTitle }}</h3>
 <input (keyup)="onKey($event)">
 <button (click)="fetchTweets()">search</button>
-<app-table [tweets$]='tweets$'></app-table>
+<app-paginator></app-paginator>
+<app-table></app-table>
