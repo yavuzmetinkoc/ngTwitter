@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 
-import { SearchFormInterface } from '../interfaces/searchForm.interface';
-import { Tweet } from '../interfaces/tweet.interface';
+import { TweetInterface } from '../interfaces/tweet.interface';
 import { HASH_TAGS } from '../constants/index';
 
 @Component({
@@ -20,7 +18,7 @@ export class SearchFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private tweetService: SearchFormInterface
+    private tweetService: TweetInterface
   ) {}
 
   ngOnInit() {
@@ -34,6 +32,7 @@ export class SearchFormComponent implements OnInit {
 
   fetchTweets(): void {
     const { apiType, keyword } = this;
+    this.tweetService.resetTweetStore();
     this.tweetService.fetchTweets({
       apiType,
       keyword

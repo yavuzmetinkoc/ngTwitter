@@ -6,13 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './searchForm/searchForm.component';
 import { NavigatorComponent } from './navigator/navigator.component';
-
-import { TweetService } from './services/tweet.service';
-import { SearchFormInterface } from './interfaces/searchForm.interface';
-import { PaginatorInterface } from './interfaces/paginator.interface';
-import { TableInterface } from './interfaces/table.interface';
 import { TableComponent } from './table/table.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+
+import { TweetService } from './services/tweet.service';
+import { TweetInterface } from './interfaces/tweet.interface';
 
 @NgModule({
   declarations: [
@@ -29,9 +27,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
   ],
   providers: [
     TweetService,
-    { provide: SearchFormInterface, useExisting: TweetService },
-    { provide: PaginatorInterface, useExisting: TweetService },
-    { provide: TableInterface, useExisting: TweetService }
+    { provide: TweetInterface, useExisting: TweetService }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,8 @@
 <p>
-  tweetAmount: {{ tweetAmount }}
+  tweetAmount: {{ tweetAmount }}, pages: {{ pages }}, currentPage: {{ currentPage }}
 </p>
+<ul>
+  <li *ngFor="let page of pages">
+    <a (click)="handleChangePage($event)">{{ page }}</a>
+  </li>
+</ul>

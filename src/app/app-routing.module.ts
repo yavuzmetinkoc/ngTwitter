@@ -20,6 +20,7 @@ const routes: Routes = [
     path: HASH_TAG_SEARCH_URL,
     component: SearchFormComponent,
     data: {
+      path: HASH_TAG_SEARCH_URL,
       apiType: HASH_TAGS,
       formTitle: HASH_TAG_SEARCH
     }
@@ -27,6 +28,7 @@ const routes: Routes = [
     path: USER_SEARCH_URL,
     component: SearchFormComponent,
     data: {
+      path: USER_SEARCH_URL,
       apiType: USERS,
       formTitle: USER_SEARCH
     }

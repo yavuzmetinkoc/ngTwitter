@@ -2,20 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 
-import { Tweet } from '../interfaces/tweet.interface';
-import { SearchFormInterface } from '../interfaces/searchForm.interface';
-import { PaginatorInterface } from '../interfaces/paginator.interface';
-import { TableInterface } from '../interfaces/table.interface';
+import { Tweet } from '../interfaces/_tweet.interface';
+import { TweetInterface } from '../interfaces/tweet.interface';
 
 const proto = 'https://am-twitter-scrape.herokuapp.com';
 
 @Injectable()
-export class TweetService implements SearchFormInterface, PaginatorInterface, TableInterface {
+export class TweetService implements TweetInterface {
 
   private tweetStore$: BehaviorSubject<Tweet[]> = new BehaviorSubject([]);
-  private tweetAmountStore$: BehaviorSubject<number> = new BehaviorSubject(0);
   tweets$: Observable<Tweet[]> = this.tweetStore$;
+
+  private tweetAmountStore$: BehaviorSubject<number> = new BehaviorSubject(0);
   tweetAmount$: Observable<number> = this.tweetAmountStore$;
+
+  private currentPageStore$: BehaviorSubject<number> = new BehaviorSubject(1);
+  currentPage$: Observable<number> = this.currentPageStore$;
+
+  tweetsPerPage = 10;
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +43,16 @@ export class TweetService implements SearchFormInterface, PaginatorInterface, Ta
           this.tweetStore$.next([]);
         }
       );
+  }
+
+  handleChangePage(nextPage: number) {
+    this.currentPageStore$.next(nextPage);
+  }
+
+  resetTweetStore() {
+    this.tweetStore$.next([]);
+    this.tweetAmountStore$.next(0);
+    this.currentPageStore$.next(1);
   }
 
   onKey() {}
