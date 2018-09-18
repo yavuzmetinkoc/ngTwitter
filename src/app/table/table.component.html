@@ -1,11 +1,15 @@
-<table *ngIf="tweets.length !== 0">
+<p>in table component</p>
+<p>
+  tweetsPerPage: {{ tweetsPerPage }}, currentPage: {{ currentPage }}
+</p>
+<table *ngIf="pagedTweets.length !== 0">
   <thead>
     <tr>
       <th *ngFor="let title of tableTitles">{{ title }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let tweet of tweets">
+    <tr *ngFor="let tweet of pagedTweets">
       <td>{{ tweet.text }}</td>
       <td>{{ tweet.likes }}</td>
       <td>{{ tweet.replies }}</td>
