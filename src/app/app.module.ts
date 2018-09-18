@@ -10,7 +10,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { TableComponent } from './table/table.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 
-import { TweetService } from './services/tweet.service';
+import { TweetService } from './services/tweet/tweet.service';
 import { TweetInterface } from './interfaces/tweet.interface';
 
 @NgModule({
