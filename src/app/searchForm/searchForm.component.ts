@@ -15,7 +15,7 @@ export class SearchFormComponent implements OnInit {
 
   formTitle: string;
   apiType = HASH_TAGS;
-  keyword = '';
+  keyword = 'sansa';
   faSearch = faSearch;
 
   constructor(
@@ -30,6 +30,7 @@ export class SearchFormComponent implements OnInit {
           this.apiType = apiType;
         }
       );
+      this.fetchTweets();
   }
 
   fetchTweets(): void {

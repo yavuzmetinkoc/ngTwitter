@@ -1,21 +1,31 @@
-<p>in table component</p>
-<p>
-  tweetsPerPage: {{ tweetsPerPage }}, currentPage: {{ currentPage }}
-</p>
-<table *ngIf="pagedTweets.length !== 0">
+<table *ngIf="pagedTweets.length !== 0" width="500" cell-spacing="0">
   <thead>
     <tr>
-      <th *ngFor="let title of tableTitles">{{ title }}</th>
+      <!-- <th *ngFor="let title of tableTitles">{{ title }}</th> -->
+      <th class="th-tweets">Tweet</th>
+      <th class="th-likes">Likes</th>
+      <th class="th-replies">Replies</th>
+      <th class="th-retweets">Retweets</th>
+      <th class="th-hashtags">Hashtags</th>
+      <th class="th-date">Date</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let tweet of pagedTweets">
-      <td>{{ tweet.text }}</td>
-      <td>{{ tweet.likes }}</td>
-      <td>{{ tweet.replies }}</td>
-      <td>{{ tweet.retweets }}</td>
-      <td>{{ tweet.hashtags }}</td>
-      <td>{{ tweet.date }}</td>
+      <td class="td-tweets">{{ tweet.text }}</td>
+      <td class="td-likes">{{ tweet.likes }}</td>
+      <td class="td-replies">{{ tweet.replies }}</td>
+      <td class="td-retweets">{{ tweet.retweets }}</td>
+      <td class="td-hashtags">{{ tweet.hashtags }}</td>
+      <td class="td-date">{{ tweet.date }}</td>
     </tr>
+    <!-- <tr *ngFor="let tweet of pagedTweets">
+      <td>aaaa</td>
+      <td>bbbb</td>
+      <td>ccc</td>
+      <td>dddd</td>
+      <td class="td-hashtag">eeeeee</td>
+      <td>ffff</td>
+    </tr> -->
   </tbody>
 </table>
