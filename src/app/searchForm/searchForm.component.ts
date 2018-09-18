@@ -15,7 +15,7 @@ export class SearchFormComponent implements OnInit {
 
   formTitle: string;
   apiType = HASH_TAGS;
-  keyword = 'sansa';
+  keyword = '';
   faSearch = faSearch;
 
   constructor(

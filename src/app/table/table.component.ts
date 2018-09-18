@@ -24,7 +24,10 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.tweetsPerPage = this.tweetService.tweetsPerPage;
     this.tweetService.tweets$.subscribe(
-      tweets => { this.tweets = tweets; this.generateDisplayRange(); },
+      tweets => {
+        this.tweets = tweets;
+        this.generateDisplayRange();
+      },
       error => { console.log('table subscribe tweets$ error', error); }
     );
     this.tweetService.currentPage$.subscribe(
@@ -37,6 +40,7 @@ export class TableComponent implements OnInit {
   }
 
   generateDisplayRange() {
+    this.pagedTweets = [];
     const { tweetsPerPage, currentPage, tweets } = this;
     if (tweets.length === 0) { return; }
     const start = tweetsPerPage * (currentPage - 1);
@@ -63,6 +67,10 @@ export class TableComponent implements OnInit {
       const ele = _date.splice(2, 1);
       copyTweet.date = `${_date.reverse().join(' ')}, ${ele[0]}`;
     }
+
+    copyTweet.likes = copyTweet.likes > 0 ? copyTweet.likes.toString() : '-';
+    copyTweet.replies = copyTweet.replies > 0 ? copyTweet.replies.toString() : '-';
+    copyTweet.retweets = copyTweet.retweets > 0 ? copyTweet.retweets.toString() : '-';
 
     return copyTweet;
   }

@@ -22,10 +22,14 @@ th {
 }
 
 td {
+  padding: 12px 0;
   color: #666;
   font-size: 0.8em;
-  padding: 12px 15px 12px 0;
   border-bottom: 1px solid #eee;
+}
+
+.td-retweets {
+  padding-right: 15px;
 }
 
 .th-tweets {
@@ -37,6 +41,7 @@ td {
 }
 
 .th-likes, .th-replies, .th-retweets {
+  text-align: center;
   width: 12%;
 }
 
@@ -44,6 +49,6 @@ td {
   width: 24%;
 }
 
-.td-likes, .td-replies, .td-retweets, .td-hashtags {
-  padding-left: 12px;
+.td-likes, .td-replies, .td-retweets {
+  text-align: center;
 }

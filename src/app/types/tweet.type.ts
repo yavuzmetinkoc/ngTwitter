@@ -15,8 +15,8 @@ export interface Tweet {
 export interface FormattedTweet {
   date: string;
   hashtags: string;
-  likes: number;
-  replies: number;
-  retweets: number;
+  likes: string;
+  replies: string;
+  retweets: string;
   text: string;
 }
