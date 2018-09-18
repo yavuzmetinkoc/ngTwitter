@@ -1,8 +1,6 @@
-<p>
-  tweetAmount: {{ tweetAmount }}, pages: {{ pages }}, currentPage: {{ currentPage }}
-</p>
 <ul>
-  <li *ngFor="let page of pages">
-    <a (click)="handleChangePage($event)">{{ page }}</a>
+  <li *ngFor="let page of pages; let i = index">
+    <a (click)="handleChangePage($event)"
+      [ngClass]="{'actived': i == currentPage - 1}">{{ page }}</a>
   </li>
 </ul>

@@ -1,12 +1,12 @@
 section {
   padding: 30px;
-  background: #eee;
+  background: rgb(245, 245, 245);
 }
 label {
   display: block;
   padding: 0;
   margin: 0;
-  font-size: 1.2em;
+  font-size: 0.9em;
   color: #999;
   font-weight: 300;
   cursor: pointer;
@@ -14,13 +14,12 @@ label {
 
 .form_wrapper {
   position: relative;
-
 }
 
 button {
   position: absolute;
   z-index: 2;
-  top: 28px;
+  top: 25px;
   font-size: 0.8em;
   font-weight: 200;
   padding: 9px 9px;
@@ -30,10 +29,13 @@ button {
   border: 0;
   color: #ccc;
   cursor: pointer;
+  outline: transparent;
 }
 
 input {
+  margin-top: 4px;
   padding: 8px 30px 8px 8px;
+  outline: transparent;
 }
 
 ::placeholder {

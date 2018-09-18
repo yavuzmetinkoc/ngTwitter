@@ -1,11 +1,10 @@
 <section>
   <div class="form_wrapper">
     <label for="search_input">{{ formTitle }}</label>
-    <input (keyup)="onKey($event)" placeholder="Search by hashtags" id="search_input">
+    <input (keyup)="onKey($event)" placeholder="search by {{ apiType }}" id="search_input">
     <button (click)="fetchTweets()">
       <fa-icon [icon]="faSearch"></fa-icon>
     </button>
   </div>
-  <app-paginator></app-paginator>
   <app-table></app-table>
 </section>

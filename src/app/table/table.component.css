@@ -1,10 +1,14 @@
+section {
+  margin-top: 30px;
+  padding: 0 21px 15px;
+  background: #fff;
+}
+
 table {
+  border-collapse: collapse;
   table-layout: fixed;
   word-wrap:break-word;
   width: 100%;
-  margin-top: 30px;
-  padding: 0 21px;
-  background: #fff;
   text-align: left;
   border: 0;
 }
@@ -12,28 +16,32 @@ table {
 th {
   color: #999;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.8em;
   border-bottom: 1px solid #eee;
-  padding: 8px 0;
+  padding: 15px 0;
 }
 
 td {
   color: #666;
   font-size: 0.8em;
-  padding: 8px 15px 8px 0;
+  padding: 12px 15px 12px 0;
   border-bottom: 1px solid #eee;
 }
 
-tbody > tr:last-child > td {
-  border-bottom: 0;
-}
-
-.th-tweets, .th-date {
+.th-tweets {
   width: 30%;
 }
 
-.th-likes, .th-replies, .th-retweets, .th-hashtags {
-  width: 10%;
+.th-date {
+  width: 20%;
+}
+
+.th-likes, .th-replies, .th-retweets {
+  width: 12%;
+}
+
+.th-hashtags {
+  width: 24%;
 }
 
 .td-likes, .td-replies, .td-retweets, .td-hashtags {
