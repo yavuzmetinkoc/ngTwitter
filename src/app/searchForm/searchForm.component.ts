@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { TweetInterface } from '../interfaces/tweet.interface';
 import { HASH_TAGS } from '../constants/index';
@@ -15,6 +16,7 @@ export class SearchFormComponent implements OnInit {
   formTitle: string;
   apiType = HASH_TAGS;
   keyword = '';
+  faSearch = faSearch;
 
   constructor(
     private route: ActivatedRoute,
