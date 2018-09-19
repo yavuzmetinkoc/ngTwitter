@@ -26,22 +26,22 @@ export class TableComponent implements OnInit {
     this.tweetService.getTweets$().subscribe(
       tweets => {
         this.tweets = tweets;
-        this.generateDisplayRange();
+        this.generateDisplayRange(tweets);
       },
       error => { console.log('table subscribe tweets$ error', error); }
     );
     this.tweetService.getCurrentPage$().subscribe(
       currentPage => {
         this.currentPage = currentPage;
-        this.generateDisplayRange();
+        this.generateDisplayRange(this.tweets);
       },
       error => { console.log('subscribing current page error in table', error); }
     );
   }
 
-  generateDisplayRange() {
+  generateDisplayRange(tweets) {
     this.pagedTweets = [];
-    const { tweetsPerPage, currentPage, tweets } = this;
+    const { tweetsPerPage, currentPage } = this;
     if (tweets.length === 0) { return; }
     const start = tweetsPerPage * (currentPage - 1);
     const end = currentPage * tweetsPerPage;
