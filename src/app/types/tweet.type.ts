@@ -13,6 +13,11 @@ export interface Tweet {
 }
 
 export interface FormattedTweet {
+  account: {
+    fullname: string;
+    href: string;
+    id: number;
+  };
   date: string;
   hashtags: string;
   likes: string;

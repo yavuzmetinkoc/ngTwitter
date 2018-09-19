@@ -40,7 +40,6 @@ describe('TableComponent', () => {
 
   it('should generate a tweets array with 3 elements', () => {
     component.generateDisplayRange(mockData);
-    console.log('component', component);
     expect(component.pagedTweets.length).toBe(3);
     expect(component.pagedTweets[0]).toEqual({
       account: {

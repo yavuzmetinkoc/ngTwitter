@@ -14,7 +14,7 @@ import { HASH_TAGS } from '../constants/index';
 export class SearchFormComponent implements OnInit {
 
   formTitle: string;
-  apiType = HASH_TAGS;
+  apiType: string;
   keyword = '';
   faSearch = faSearch;
 
