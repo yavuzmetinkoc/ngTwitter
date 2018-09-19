@@ -3,9 +3,9 @@ import { Tweet } from '../types/tweet.type';
 
 export abstract class TweetInterface {
   abstract tweetsPerPage: number;
-  abstract tweets$: Observable<Tweet[]>;
-  abstract tweetAmount$: Observable<number>;
-  abstract currentPage$: Observable<number>;
+  abstract getTweets$(): Observable<Tweet[]>;
+  abstract getTweetAmount$(): Observable<number>;
+  abstract getCurrentPage$(): Observable<number>;
   abstract handleChangePage(page: number): void;
   abstract fetchTweets(params): void;
   abstract onKey(): void;

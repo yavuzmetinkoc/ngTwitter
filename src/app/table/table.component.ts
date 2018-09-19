@@ -23,14 +23,14 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.tweetsPerPage = this.tweetService.tweetsPerPage;
-    this.tweetService.tweets$.subscribe(
+    this.tweetService.getTweets$().subscribe(
       tweets => {
         this.tweets = tweets;
         this.generateDisplayRange();
       },
       error => { console.log('table subscribe tweets$ error', error); }
     );
-    this.tweetService.currentPage$.subscribe(
+    this.tweetService.getCurrentPage$().subscribe(
       currentPage => {
         this.currentPage = currentPage;
         this.generateDisplayRange();

@@ -11,13 +11,10 @@ const proto = 'https://am-twitter-scrape.herokuapp.com';
 export class TweetService implements TweetInterface {
 
   private tweetStore$: BehaviorSubject<Tweet[]> = new BehaviorSubject([]);
-  tweets$: Observable<Tweet[]> = this.tweetStore$;
 
   private tweetAmountStore$: BehaviorSubject<number> = new BehaviorSubject(0);
-  tweetAmount$: Observable<number> = this.tweetAmountStore$;
 
   private currentPageStore$: BehaviorSubject<number> = new BehaviorSubject(1);
-  currentPage$: Observable<number> = this.currentPageStore$;
 
   tweetsPerPage = 10;
 
@@ -54,6 +51,12 @@ export class TweetService implements TweetInterface {
     this.tweetAmountStore$.next(0);
     this.currentPageStore$.next(1);
   }
+
+  getCurrentPage$() { return this.currentPageStore$; }
+
+  getTweetAmount$() { return this.tweetAmountStore$; }
+
+  getTweets$() { return this.tweetStore$; }
 
   onKey() {}
 }

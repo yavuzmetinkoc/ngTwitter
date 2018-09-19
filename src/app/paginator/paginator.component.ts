@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 import { TweetInterface } from '../interfaces/tweet.interface';
@@ -12,10 +10,7 @@ import { TweetInterface } from '../interfaces/tweet.interface';
 })
 export class PaginatorComponent implements OnInit {
 
-  tweetAmount$: Observable<number> = this.tweetService.tweetAmount$;
   tweetAmount: number;
-
-  currentPage$: Observable<number> = this.tweetService.currentPage$;
   currentPage: number;
 
   totalPageAmount: number;
@@ -23,20 +18,23 @@ export class PaginatorComponent implements OnInit {
   currentPath: string;
 
   constructor(
-    private tweetService: TweetInterface,
-    private router: Router,
+    public tweetService: TweetInterface,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    console.log('this', this);
     this.route.data.subscribe(
       ({ path }) => { this.currentPath = path; },
       error => { console.log('get current path error', error); }
     );
-    this.currentPage$.subscribe(
+    // this.tweetService.currentPage$.subscribe(
+    //   currentPage => { this.currentPage = currentPage; }
+    // );
+    this.tweetService.getCurrentPage$().subscribe(
       currentPage => { this.currentPage = currentPage; }
     );
-    this.tweetAmount$.subscribe(
+    this.tweetService.getTweetAmount$().subscribe(
       tweetAmount => {
         this.tweetAmount = tweetAmount;
         this.generatePageArray(tweetAmount);
