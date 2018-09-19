@@ -1,31 +1,50 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
 import { PaginatorComponent } from './paginator.component';
 import { TweetInterface } from '../interfaces/tweet.interface';
+import {
+  USER_SEARCH,
+  USER_SEARCH_URL,
+  USERS
+} from '../constants';
 
 describe('PaginatorComponent', () => {
+
   let component: PaginatorComponent;
   let fixture: ComponentFixture<PaginatorComponent>;
   const mockTweetService = {
     getCurrentPage$: () => of(5),
     getTweetAmount$: () => of(47)
   };
+  const mockRoute = {
+    data: of({
+      formTitle: USER_SEARCH,
+      apiType: USERS,
+      path: USER_SEARCH_URL
+    })
+  };
 
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PaginatorComponent ],
       imports: [
         RouterTestingModule
       ],
       providers: [
-        { provide: TweetInterface, useValue: mockTweetService }
+        { provide: TweetInterface, useValue: mockTweetService },
+        { provide: ActivatedRoute, useValue: mockRoute }
       ]
-    });
+    })
+    .compileComponents();
+  }));
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(PaginatorComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {

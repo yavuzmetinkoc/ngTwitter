@@ -27,7 +27,8 @@ describe('SearchFormComponent', () => {
   const mockRoute = {
     data: of({
       formTitle: USER_SEARCH,
-      apiType: USERS
+      apiType: USERS,
+      path: USER_SEARCH_URL
     })
   };
 
