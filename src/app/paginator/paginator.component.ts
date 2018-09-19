@@ -13,7 +13,6 @@ export class PaginatorComponent implements OnInit {
   tweetAmount: number;
   currentPage: number;
 
-  totalPageAmount: number;
   pages: number[] = [];
   currentPath: string;
 
@@ -23,33 +22,29 @@ export class PaginatorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('this', this);
     this.route.data.subscribe(
       ({ path }) => { this.currentPath = path; },
       error => { console.log('get current path error', error); }
     );
-    // this.tweetService.currentPage$.subscribe(
-    //   currentPage => { this.currentPage = currentPage; }
-    // );
     this.tweetService.getCurrentPage$().subscribe(
       currentPage => { this.currentPage = currentPage; }
     );
     this.tweetService.getTweetAmount$().subscribe(
       tweetAmount => {
         this.tweetAmount = tweetAmount;
-        this.generatePageArray(tweetAmount);
+        this.generatePageArray(tweetAmount, this.tweetService.tweetsPerPage);
       },
       error => { console.log('get tweet amount error', error); }
     );
   }
 
-  generatePageArray(tweetAmount) {
+  generatePageArray(tweetAmount, tweetsPerPage) {
     const pages = [];
     if (tweetAmount === 0) {
       this.pages = pages;
       return;
     }
-    const totalPageAmount = Math.ceil(tweetAmount / this.tweetService.tweetsPerPage);
+    const totalPageAmount = Math.ceil(tweetAmount / tweetsPerPage);
     for (let i = 1; i <= totalPageAmount; i += 1) {
       pages.push(i);
     }

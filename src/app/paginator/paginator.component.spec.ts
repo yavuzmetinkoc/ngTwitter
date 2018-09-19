@@ -10,7 +10,7 @@ describe('PaginatorComponent', () => {
   let fixture: ComponentFixture<PaginatorComponent>;
   const tweetService = {
     getCurrentPage$: () => of(5),
-    tweetAmount$: of(47),
+    getTweetAmount$: () => of(47)
   };
 
   beforeEach(() => {
@@ -23,11 +23,12 @@ describe('PaginatorComponent', () => {
         { provide: TweetInterface, useValue: tweetService }
       ]
     });
+
+    fixture = TestBed.createComponent(PaginatorComponent);
+    component = fixture.componentInstance;
   });
 
   it('should create', () => {
-    fixture = TestBed.createComponent(PaginatorComponent);
-    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 
@@ -37,9 +38,22 @@ describe('PaginatorComponent', () => {
         expect(currentPage).toBe(5);
       }
     );
+  }));
+
+  it('should subscribe tweet amount', () => {
     component.tweetService.getTweetAmount$().subscribe(
       tweetAmount => { expect(tweetAmount).toBe(47); }
     );
-  }));
+  });
+
+  it('should generate page array by 47 tweets and 10 tweets per page', () => {
+    component.generatePageArray(47, 10);
+    expect(component.pages).toEqual([1, 2, 3, 4, 5]);
+  });
+
+  it('should generate page array by 34 tweets and 15 tweets per page', () => {
+    component.generatePageArray(34, 15);
+    expect(component.pages).toEqual([1, 2, 3]);
+  });
 
 });
