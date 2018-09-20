@@ -1,6 +1,16 @@
 <ul>
+  <li *ngIf="currentPage > 1">
+    <a (click)="handleChangePage(currentPage - 1)">
+      <
+    </a>
+  </li>
   <li *ngFor="let page of pages; let i = index">
-    <a (click)="handleChangePage($event)"
+    <a (click)="handleChangePage(i + 1)"
       [ngClass]="{'actived': i == currentPage - 1}">{{ page }}</a>
+  </li>
+  <li *ngIf="currentPage < pages.length">
+    <a (click)="handleChangePage(currentPage + 1)">
+      >
+    </a>
   </li>
 </ul>

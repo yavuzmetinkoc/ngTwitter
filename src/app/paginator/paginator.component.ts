@@ -51,7 +51,7 @@ export class PaginatorComponent implements OnInit {
     this.pages = pages;
   }
 
-  handleChangePage(e) {
-    this.tweetService.handleChangePage(parseInt(e.target.text, 10));
+  handleChangePage(nextPage) {
+    this.tweetService.handleChangePage(parseInt(nextPage, 10));
   }
 }
