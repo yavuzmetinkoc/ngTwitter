@@ -25,7 +25,7 @@ You are gonna see the app on your browser at http://localhost:4200/
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/FireShot%20Capture%20006%20-%20NgTwitter%20-%20http___localhost_4200_hashtag_search.jpg)
 
 ## About the Project
-Use [Allow-Control-Allow-Origin: * ](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-ntp-icon) chrome plugin to allow CORS, then search by keywords, you will get the results.
+Use [Allow-Control-Allow-Origin: * ](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-ntp-icon) chrome plugin to handle CORS, then search by keywords, you will get the results.
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/FireShot%20Capture%20005%20-%20NgTwitter%20-%20http___localhost_4200_hashtag_search.jpg)
 
 ## Running unit tests
