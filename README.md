@@ -27,7 +27,7 @@ Use [Allow-Control-Allow-Origin: * ](https://chrome.google.com/webstore/detail/a
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) and [Jasmine](https://jasmine.github.io/index.html).
 
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/jasmine.png)
 
