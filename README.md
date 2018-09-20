@@ -8,7 +8,7 @@ In Angular, there are mainly three ways to share states between different compon
 1. Passing down and pushing up states between parent components and child components by using `@Input()` and `@Output()` decorators.
 2. Passing down states from parent components by useing `@ViewChild()` decorator.
 
-But those caseses mainly mean states are handled by the parent components. Personally, I prefer decouple the relationship betweens components and services exactly like what we do in React and Redux. So...
+But those caseses mainly mean states are handled by the components. Personally, I prefer to decouple the relationship betweens components and services exactly like what we do in React and Redux. So...
 
 3. Observable Data Service. 
 
