@@ -28,7 +28,6 @@ export class TweetService implements TweetInterface {
       this.tweetStore$.next([]);
       return;
     }
-    console.log('***** fetch tweets from app.service.ts *****', apiType, keyword);
     this.http.get<Tweet[]>(`${proto}/${apiType}/${keyword}?pages_limit=3&wait=0`)
       .subscribe(
         res => {
