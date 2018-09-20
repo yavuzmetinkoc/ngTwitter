@@ -2,7 +2,7 @@
 
 This project is a test from the company which I had an interview with. but it's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as a practice to figure out how things work in Angular such as data structure, writing components, uni testing... etc. I believe it can also be taken as an inspiration of implementing Observable Data Service.
 
-###### Main Idea: Decouple
+###### Main Idea: Decoupling and single source of truth
 In Angular, there are mainly three ways to share states between different components. 
 
 1. Passing down and pushing up states between parent components and child components by using `@Input()` and `@Output()` decorators.
@@ -31,6 +31,8 @@ Use [Allow-Control-Allow-Origin: * ](https://chrome.google.com/webstore/detail/a
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) and [Jasmine](https://jasmine.github.io/index.html).
+
+***As you see, Jasmine put a chrome browser inside Angular by defualt, if you are going to run tests in Docker or continuous integration servers, it will cause some problems. So you have to run the tests with headless browser by `ng test --browsers ChromeHeadless` or PhantomJS.***
 
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/jasmine.png)
 
