@@ -12,7 +12,8 @@ But those caseses mainly mean states are handled by the parent components. Perso
 
 3. Observable Data Service. 
 
-In simple app, the TweetService handles the states and operations what are relatived to tweets. Every component only subscribes the needed states from TweetService. If the state of TweetService was changed, components will receive the newist states. So there is no specific relations between components, they don't have to know each others.
+In simple app, the TweetService handles the states and operations what are relatived to tweets. Every component only subscribes the needed states from TweetService. If the state of TweetService was changed, components will receive the newist states. So there is no specific relations between components, they don't have to know each others even though Paginator component and Table component are actually inside the SearchForm component.
+![image](https://github.com/ReacherYin/ngTwitter/blob/master/structure.png)
 
 ## Intalling the project
 Run `git clone git@github.com:ReacherYin/ngTwitter.git` to download the repository, and go to the root directory, run `npm start` to start the app on your local machine.
