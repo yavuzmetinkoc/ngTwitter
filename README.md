@@ -5,8 +5,8 @@ This project is a test project from the company which I had an interview with. I
 ###### Main Idea: Decouple
 In Angular, there are mainly three ways to share states between different components. 
 
-1. Passing down and up states from parents by using `@Input()` and `@Output()` decorators.
-2. Passing down states from parents by useing `@ViewChild()` decorator.
+1. Passing down and push up states between parent components and child components by using `@Input()` and `@Output()` decorators.
+2. Passing down states from parent components by useing `@ViewChild()` decorator.
 
 But those caseses mainly mean states are handled by the parent components. Personally, I prefer decouple the relationship betweens components and services exactly like what we do in React and Redux. So...
 
