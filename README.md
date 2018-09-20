@@ -32,9 +32,13 @@ Use [Allow-Control-Allow-Origin: * ](https://chrome.google.com/webstore/detail/a
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) and [Jasmine](https://jasmine.github.io/index.html).
 
-***As you see, Jasmine put a chrome browser inside Angular by defualt. If you are going to run tests in Docker or continuous integration servers, it will cause some problems. To solve this case, you have to tests with headless browser by running `ng test --browsers ChromeHeadless` or using PhantomJS.***
 
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/jasmine.png)
+
+***As you see, Jasmine put a chrome browser inside Angular by defualt. If you are going to run tests in Docker or continuous integration servers, it will cause some problems. To solve this case, you have to tests with headless browser by running `ng test --browsers ChromeHeadless` or using PhantomJS.***
+
+
+![image](https://github.com/ReacherYin/ngTwitter/blob/master/FireShot%20Capture%20010%20-%20ReacherYin_ngTwitter%20-%20Travis%20CI%20-%20https___travis-ci.org_ReacherYin_ngTwitter.jpg)
 
 ## Code scaffolding
 
