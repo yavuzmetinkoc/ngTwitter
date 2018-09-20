@@ -3,8 +3,9 @@
 This project is a test project from the company which I had an interview with. It's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as an example to figure out how things work in Angular such as data structure, writing components, uni testing... etc.
 
 ## Intalling project
-Run `git clone git@github.com:ReacherYin/ngTwitter.git` to download the repository, and go to the root directory, run `npm start` to start the app on your local machine. You gonna see the app on your browser at http://localhost:4200/
+Run `git clone git@github.com:ReacherYin/ngTwitter.git` to download the repository, and go to the root directory, run `npm start` to start the app on your local machine.
 
+You are gonna see the app on your browser at http://localhost:4200/
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/FireShot%20Capture%20006%20-%20NgTwitter%20-%20http___localhost_4200_hashtag_search.jpg)
 
 ## Development server
