@@ -12,7 +12,7 @@ But those caseses mainly mean states are handled by the components. Personally, 
 
 3. Observable Data Service. 
 
-In this simple app, the TweetService handles the states and methods what are relatived to tweets(fetched from api). Every component only subscribes the needed states from TweetService. If the state of TweetService was changed, components will receive the newist states. So there is no specific relations between components, they don't have to know each others even though Paginator component and Table component are actually inside the SearchForm component.
+In this simple app, the TweetService handles the states and methods what are relatived to tweets(fetched from api). Every component only subscribes the needed states from TweetService. If the state of TweetService was changed, components will receive the newist states. So there is no specific relationship between components, they don't have to know each others even though Paginator component and Table component are actually inside the SearchForm component.
 
 
 ![image](https://github.com/ReacherYin/ngTwitter/blob/master/app_structure.png)
