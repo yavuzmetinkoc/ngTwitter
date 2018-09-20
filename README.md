@@ -1,6 +1,6 @@
 # NgTwitter
 
-This project is a test project from the company which I had an interview with. It's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as a practice to figure out how things work in Angular such as data structure, writing components, uni testing... etc. I believe it can also be taken as an inspiration of implementing Observable Data Service.
+This project is a test from the company which I had an interview with. It's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as a practice to figure out how things work in Angular such as data structure, writing components, uni testing... etc. I believe it can also be taken as an inspiration of implementing Observable Data Service.
 
 ###### Main Idea: Decouple
 In Angular, there are mainly three ways to share states between different components. 
