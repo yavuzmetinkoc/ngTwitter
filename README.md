@@ -1,6 +1,18 @@
 # NgTwitter
 
-This project is a test project from the company which I had an interview with. It's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as an example to figure out how things work in Angular such as data structure, writing components, uni testing... etc.
+This project is a test project from the company which I had an interview with. It's also a project of learning Angular framework for me, due to I had no Angular2, 3, 4, 5, 6 experience before. I take this project as an example to figure out how things work in Angular such as data structure, writing components, uni testing... etc. I believe it can also be taken as an inspiration of implementing Observable Data Service.
+
+###### Main Idea: Decouple
+In Angular, there are mainly three ways to share states between different components. 
+
+1. Passing down states from parents by using `@Input()` and `@Output()` decorators.
+2. Passing down states from parents by useing `@ViewChild()` decorator.
+
+But those caseses mainly mean states are handled by the parent components. Personally, I prefer decouple the relationship betweens components and services exactly like what we do in React and Redux. So...
+
+3. Observable Data Service. 
+
+In this project, the TweetService handles the states and operations what are relatived to tweets. Every component only subscribes the needed state from TweetService. If the state of TweetService was changed, components will receive the newist states. So there is no specific relations between components, they don't have to know each others.
 
 ## Intalling the project
 Run `git clone git@github.com:ReacherYin/ngTwitter.git` to download the repository, and go to the root directory, run `npm start` to start the app on your local machine.
